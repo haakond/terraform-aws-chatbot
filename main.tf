@@ -4,14 +4,14 @@ resource "awscc_chatbot_slack_channel_configuration" "chatbot_slack" {
   slack_channel_id   = var.slack_channel_id
   slack_workspace_id = var.slack_workspace_id
   logging_level      = var.logging_level
-  sns_topic_arns     = [aws_sns_topic.sns_topic_for_aws_chatbot.arn]
+  sns_topic_arns     = [aws_sns_topic.sns_topic_for_aws_chatbot_primary_region.arn, aws_sns_topic.sns_topic_for_aws_chatbot_us_east_1.arn]
   guardrail_policies = [
     "arn:aws:iam::aws:policy/PowerUserAccess"
   ]
 }
 
 resource "awscc_iam_role" "chatbot_channel_role" {
-  role_name = "chatBot-channel-role"
+  role_name = "aws-chatbot-channel-role"
   assume_role_policy_document = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -35,7 +35,7 @@ resource "awscc_iam_role" "chatbot_channel_role" {
   ]
 }
 
-resource "aws_sns_topic" "sns_topic_for_aws_chatbot" {
+resource "aws_sns_topic" "sns_topic_for_aws_chatbot_primary_region" {
   #checkov:skip=CKV_AWS_26:
   name                           = "aws-chatbot-notifications"
   http_success_feedback_role_arn = aws_iam_role.delivery_status_logging_for_sns_topic.arn
@@ -46,9 +46,26 @@ resource "aws_sns_topic" "sns_topic_for_aws_chatbot" {
   }
 }
 
-# Define SNS topic policy
-resource "aws_sns_topic_policy" "sns_topic_policy_for_aws_chatbot" {
-  arn    = aws_sns_topic.sns_topic_for_aws_chatbot.arn
+resource "aws_sns_topic" "sns_topic_for_aws_chatbot_us_east_1" {
+  #checkov:skip=CKV_AWS_26:
+  name                           = "aws-chatbot-notifications"
+  http_success_feedback_role_arn = aws_iam_role.delivery_status_logging_for_sns_topic.arn
+  http_failure_feedback_role_arn = aws_iam_role.delivery_status_logging_for_sns_topic.arn
+  tags = {
+    Name    = "aws_chatbot_notifications"
+    Service = "monitoring"
+  }
+}
+
+# Define SNS topic policy primary region
+resource "aws_sns_topic_policy" "sns_topic_policy_for_aws_chatbot_primary_region" {
+  arn    = aws_sns_topic.sns_topic_for_aws_chatbot_primary_region.arn
+  policy = data.aws_iam_policy_document.sns_topic_policy_for_aws_chatbot.json
+}
+
+# Define SNS topic policy primary region us-east-1
+resource "aws_sns_topic_policy" "sns_topic_policy_for_aws_chatbot_us_east_1" {
+  arn    = aws_sns_topic.sns_topic_for_aws_chatbot_us_east_1.arn
   policy = data.aws_iam_policy_document.sns_topic_policy_for_aws_chatbot.json
 }
 

@@ -10,8 +10,14 @@ output "chatbot_channel_iam_role_arn" {
   sensitive   = false
 }
 
-output "primary_region_chatbot_sns_topic_arn" {
-  value       = aws_sns_topic.sns_topic_for_aws_chatbot.arn
+output "chatbot_sns_topic_arn_primary_region" {
+  value       = aws_sns_topic.sns_topic_for_aws_chatbot_primary_region.arn
   description = "AWS Chatbot SNS topic ARN in primary region."
+  sensitive   = false
+}
+
+output "chatbot_sns_topic_arn_us_east_1" {
+  value       = aws_sns_topic.sns_topic_for_aws_chatbot_us_east_1.arn
+  description = "AWS Chatbot SNS topic ARN in us-east-1."
   sensitive   = false
 }
