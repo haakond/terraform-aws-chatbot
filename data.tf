@@ -23,7 +23,7 @@ data "aws_iam_policy_document" "sns_topic_policy_for_aws_chatbot" {
 
     principals {
       type        = "AWS"
-      identifiers = local.aws_account_id
+      identifiers = [local.aws_account_id]
     }
   }
   statement {

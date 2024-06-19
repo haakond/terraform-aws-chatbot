@@ -4,7 +4,7 @@ resource "awscc_chatbot_slack_channel_configuration" "chatbot_slack" {
   slack_channel_id   = var.slack_channel_id
   slack_workspace_id = var.slack_workspace_id
   logging_level      = var.logging_level
-  sns_topic_arns     = ["${aws_sns_topic.sns_topic_for_aws_chatbot}"]
+  sns_topic_arns     = [aws_sns_topic.sns_topic_for_aws_chatbot.arn]
   guardrail_policies = [
     "arn:aws:iam::aws:policy/AWSResourceExplorerReadOnlyAccess",
     "arn:aws:iam::aws:policy/AWSIncidentManagerResolverAccess",
