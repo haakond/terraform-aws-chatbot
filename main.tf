@@ -6,12 +6,7 @@ resource "awscc_chatbot_slack_channel_configuration" "chatbot_slack" {
   logging_level      = var.logging_level
   sns_topic_arns     = [aws_sns_topic.sns_topic_for_aws_chatbot.arn]
   guardrail_policies = [
-    "arn:aws:iam::aws:policy/AWSResourceExplorerReadOnlyAccess",
-    "arn:aws:iam::aws:policy/AWSIncidentManagerResolverAccess",
-    "arn:aws:iam::aws:policy/AmazonQFullAccess",
-    "arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess",
-    "arn:aws:iam::aws:policy/AWSSecurityHubFullAccess",
-    "arn:aws:iam::aws:policy/AWSSupportAccess"
+    "arn:aws:iam::aws:policy/PowerUserAccess"
   ]
 }
 
