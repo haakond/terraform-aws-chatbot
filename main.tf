@@ -48,6 +48,7 @@ resource "aws_sns_topic" "sns_topic_for_aws_chatbot_primary_region" {
 
 resource "aws_sns_topic" "sns_topic_for_aws_chatbot_us_east_1" {
   #checkov:skip=CKV_AWS_26:
+  provider                       = aws.us-east-1
   name                           = "aws-chatbot-notifications"
   http_success_feedback_role_arn = aws_iam_role.delivery_status_logging_for_sns_topic.arn
   http_failure_feedback_role_arn = aws_iam_role.delivery_status_logging_for_sns_topic.arn
@@ -65,8 +66,9 @@ resource "aws_sns_topic_policy" "sns_topic_policy_for_aws_chatbot_primary_region
 
 # Define SNS topic policy primary region us-east-1
 resource "aws_sns_topic_policy" "sns_topic_policy_for_aws_chatbot_us_east_1" {
-  arn    = aws_sns_topic.sns_topic_for_aws_chatbot_us_east_1.arn
-  policy = data.aws_iam_policy_document.sns_topic_policy_for_aws_chatbot.json
+  provider = aws.us-east-1
+  arn      = aws_sns_topic.sns_topic_for_aws_chatbot_us_east_1.arn
+  policy   = data.aws_iam_policy_document.sns_topic_policy_for_aws_chatbot.json
 }
 
 # IAM role for delivery_status_logging_for_sns_topic
