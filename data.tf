@@ -19,7 +19,7 @@ data "aws_iam_policy_document" "sns_topic_policy_for_aws_chatbot" {
       "sns:DeleteTopic",
       "sns:AddPermission",
     ]
-    resources = [aws_sns_topic.sns_topic_for_aws_chatbot_primary_region.arn, aws_sns_topic.sns_topic_for_aws_chatbot_us_east_1.arn]
+    resources = [aws_sns_topic.sns_topic_for_aws_chatbot_primary_region.arn]
 
     principals {
       type        = "AWS"
@@ -32,7 +32,7 @@ data "aws_iam_policy_document" "sns_topic_policy_for_aws_chatbot" {
     actions = [
       "sns:Publish"
     ]
-    resources = [aws_sns_topic.sns_topic_for_aws_chatbot_primary_region.arn, aws_sns_topic.sns_topic_for_aws_chatbot_us_east_1.arn]
+    resources = [aws_sns_topic.sns_topic_for_aws_chatbot_primary_region.arn]
 
     principals {
       type        = "Service"

@@ -21,7 +21,6 @@ See [examples/main.tf](examples/main.tf).
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.53.0 |
-| <a name="provider_aws.us-east-1"></a> [aws.us-east-1](#provider\_aws.us-east-1) | ~> 5.53.0 |
 | <a name="provider_awscc"></a> [awscc](#provider\_awscc) | ~> 1.2.0 |
 
 ## Modules
@@ -36,9 +35,7 @@ No modules.
 | [aws_iam_role.delivery_status_logging_for_sns_topic](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy_attachment.delivery_status_logging_for_sns_topic_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_sns_topic.sns_topic_for_aws_chatbot_primary_region](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
-| [aws_sns_topic.sns_topic_for_aws_chatbot_us_east_1](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
 | [aws_sns_topic_policy.sns_topic_policy_for_aws_chatbot_primary_region](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_policy) | resource |
-| [aws_sns_topic_policy.sns_topic_policy_for_aws_chatbot_us_east_1](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_policy) | resource |
 | [awscc_chatbot_slack_channel_configuration.chatbot_slack](https://registry.terraform.io/providers/hashicorp/awscc/latest/docs/resources/chatbot_slack_channel_configuration) | resource |
 | [awscc_iam_role.chatbot_channel_role](https://registry.terraform.io/providers/hashicorp/awscc/latest/docs/resources/iam_role) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
