@@ -15,9 +15,3 @@ output "chatbot_sns_topic_arn_primary_region" {
   description = "AWS Chatbot SNS topic ARN in primary region."
   sensitive   = false
 }
-
-output "chatbot_sns_topic_arn_us_east_1" {
-  value       = aws_sns_topic.sns_topic_for_aws_chatbot_us_east_1.arn
-  description = "AWS Chatbot SNS topic ARN in us-east-1."
-  sensitive   = false
-}
