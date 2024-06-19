@@ -61,14 +61,14 @@ resource "aws_sns_topic" "sns_topic_for_aws_chatbot_us_east_1" {
 # Define SNS topic policy primary region
 resource "aws_sns_topic_policy" "sns_topic_policy_for_aws_chatbot_primary_region" {
   arn    = aws_sns_topic.sns_topic_for_aws_chatbot_primary_region.arn
-  policy = data.aws_iam_policy_document.sns_topic_policy_for_aws_chatbot.json
+  policy = data.aws_iam_policy_document.sns_topic_policy_for_aws_chatbot_primary_region.json
 }
 
 # Define SNS topic policy primary region us-east-1
 resource "aws_sns_topic_policy" "sns_topic_policy_for_aws_chatbot_us_east_1" {
   provider = aws.us-east-1
   arn      = aws_sns_topic.sns_topic_for_aws_chatbot_us_east_1.arn
-  policy   = data.aws_iam_policy_document.sns_topic_policy_for_aws_chatbot.json
+  policy   = data.aws_iam_policy_document.sns_topic_policy_for_aws_chatbot_us_east_1.json
 }
 
 # IAM role for delivery_status_logging_for_sns_topic

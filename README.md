@@ -4,6 +4,9 @@ terraform-aws-chatbot
 # About
 Terraform AWS sample module to provision AWS Chatbot integration with Slack.
 
+# Providers
+Requires both aws (AWS) and awscc (AWS Cloud Control) providers.
+
 ## Usage
 
 See [examples/main.tf](examples/main.tf).
@@ -45,7 +48,8 @@ No modules.
 | [aws_canonical_user_id.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/canonical_user_id) | data source |
 | [aws_iam_policy_document.sns_to_cw_logs_assume_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_iam_policy_document.sns_to_cw_logs_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
-| [aws_iam_policy_document.sns_topic_policy_for_aws_chatbot](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.sns_topic_policy_for_aws_chatbot_primary_region](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.sns_topic_policy_for_aws_chatbot_us_east_1](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
 
 ## Inputs
