@@ -8,8 +8,8 @@ Terraform AWS sample module to provision AWS Chatbot integration with Slack.
 Requires both aws (AWS) and awscc (AWS Cloud Control) providers.
 
 ## Usage
-
-See [examples/main.tf](examples/main.tf).
+1. Authorize Slack to your AWS account in the Console by following [Step 1: Configure a Slack client](https://docs.aws.amazon.com/chatbot/latest/adminguide/slack-setup.html#slack-client-setup).
+1. See [examples/main.tf](examples/main.tf).
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
