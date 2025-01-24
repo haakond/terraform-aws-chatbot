@@ -16,15 +16,15 @@ Requires both aws (AWS) and awscc (AWS Cloud Control) providers.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.53.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.84.0 |
 | <a name="requirement_awscc"></a> [awscc](#requirement\_awscc) | ~> 1.2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.53.0 |
-| <a name="provider_aws.us-east-1"></a> [aws.us-east-1](#provider\_aws.us-east-1) | ~> 5.53.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.84.0 |
+| <a name="provider_aws.us-east-1"></a> [aws.us-east-1](#provider\_aws.us-east-1) | ~> 5.84.0 |
 | <a name="provider_awscc"></a> [awscc](#provider\_awscc) | ~> 1.2.0 |
 
 ## Modules
